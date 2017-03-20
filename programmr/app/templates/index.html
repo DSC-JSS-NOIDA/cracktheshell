@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <title>Crack The Shell</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet"> 
+  
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+  
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/index.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section id="hero">
+    <div class="hero-container">
+      <div class="wow fadeIn">
+        <div class="hero-logo">
+          <img class="" src="{% static 'img/logo.png' %}" alt="Imperial" style="width: 75em">
+        </div>
+        
+        <h2>Different roads can sometimes lead to the same landing</h2>
+        <div class="actions">
+          <a href="{% url 'signup_view' %}" class="btn-get-started">SignUp</a>
+          <a href="{% url 'login_view' %}" class="btn-services">Login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+</body>
+</html>

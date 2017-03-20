@@ -1,0 +1,40 @@
+{% extends "include/base.html" %}
+
+{% load staticfiles %}
+
+{% block css %}
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/leaderboard.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+	<br><br>
+	<center><h1>Leaderboard</h1></center>
+
+	<br><br>
+	<div class="panel panel-default container">			
+		<div class="panel-body">
+			<table class="table bootstrap-datatable countries">
+				<thead>
+					<tr>
+						<th>S No.</th>
+						<th>Name</th>
+						<th>Score</th>
+					</tr>
+				</thead>   
+				<tbody>
+					{% for userdata in data %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td class="username">{{ userdata.user.first_name }} {{ userdata.user.last_name }}</td>
+						<td class="total_score">{{ userdata.total_score }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div><br>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% load static %}
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Crack The Shell</title>  
+	    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+	</head>
+
+  	<body class="login-img3-body">
+
+	    <div class="login-page">
+		  	<div class="form">
+			    <form class="login-form" method="post" action="">
+			    	{% csrf_token %}
+			      	<input type="text" name="username" placeholder="Username"/>
+			      	<input type="password" name="password" placeholder="Password"/>
+			      	<button type="submit">login</button>
+			    </form>
+		  	</div>
+		</div>
+	    
+  	</body>
+</html>

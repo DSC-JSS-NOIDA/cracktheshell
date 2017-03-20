@@ -1,0 +1,73 @@
+
+{% load staticfiles %}
+
+{% block css %}
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link rel="icon" href="{% static 'img/icon.png' %}"> 
+	<title>CodeStorm</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+	<br><br>
+	<div class="panel panel-default container">			
+		<div class="panel-body">
+			<section id="content">
+		<div class="container">
+			<div class="row">
+    			<div class="col-xs-12 col-sm-12 col-md-12">
+					<form role="form" class="register-form" id="form" method="post" action="">
+						{% csrf_token %}
+						<center><h2>Profile</h2></center>
+						<hr id="colorgraph">
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="First Name" tabindex="4" name="fname">
+						</div>
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="Last Name" tabindex="4" name="lname">
+						</div>
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="Year" tabindex="4" name="year">
+						</div>
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="Branch" tabindex="4" name="branch">
+						</div>
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="Phone No." tabindex="4" name="mobile">
+						</div>
+						<div class="form-group">
+							<input type="text" id="year" class="form-control input-lg" placeholder="College" tabindex="4" name="college">
+						</div>
+						<hr id="colorgraph">
+						<input type="submit" value="Save" class="btn btn-primary btn-block btn-lg" tabindex="7" id="submit-btn">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	</div>
+	<br>
+	<br>
+
+{% endblock content %}
+
+{% block script %}
+
+	<script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript">
+		$(".errorlist").remove();
+	</script>
+
+{% endblock script %}
