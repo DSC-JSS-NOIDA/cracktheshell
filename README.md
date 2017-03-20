@@ -1,7 +1,7 @@
-# programmr
-Competitive programming platform of GDG JSS Noida
+# Crack The Shell
+Programming platform of crack the shell event by GDG JSS Noida
 
-###Prerequisites
+### Prerequisites
 
 1. Pip
 > sudo easy_install pip
@@ -9,7 +9,7 @@ Competitive programming platform of GDG JSS Noida
 2. Virtual Environment 
 > pip install virtualenv
 
-###Installation
+### Installation
 
 1. Clone the repository
 > git clone https://github.com/GDG-JSS-NOIDA/programmr.git
