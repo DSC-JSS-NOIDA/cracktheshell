@@ -12,7 +12,7 @@ Programming platform of crack the shell event by GDG JSS Noida
 ### Installation
 
 1. Clone the repository
-> git clone https://github.com/GDG-JSS-NOIDA/programmr.git
+> git clone https://github.com/GDG-JSS-NOIDA/cracktheshell.git
 
 2. Migrate to the programmr folder
 > cd programmr/programmr
