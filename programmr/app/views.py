@@ -16,7 +16,7 @@ getGoogle = GooglePlus(settings.GOOGLE_PLUS_APP_ID, settings.GOOGLE_PLUS_APP_SEC
 
 def index(request):
 	if request.user.is_active:
-		return render(request, 'dashboard.html')
+		return redirect(reverse_lazy('dashboard'))
 	
 	return render(request, 'index.html')
 
@@ -29,20 +29,25 @@ def login_view(request):
 		if user is not None:
 			login(request, user)
 			return redirect('dashboard')
+		else:
+			return render(request, 'login.html', {'error': 'Sorry, Username or Password is incorrect!!!'})
 	return render(request, 'login.html')
 
 
 
 def signup_view(request):
 	if request.method == 'POST':
-		username = request.POST['username']
-		email = request.POST['email']
-		password = request.POST['password']
-		user = User.objects.create_user(username, email, password)
-		user.save()
-		login(request, user)
-		return redirect(reverse_lazy('profile'))
-	
+		try:
+			username = request.POST['username']
+			email = request.POST['email']
+			password = request.POST['password']
+			user = User.objects.create_user(username, email, password)
+			user.save()
+			login(request, user)
+			return redirect(reverse_lazy('profile'))
+		except:
+			return render(request, 'signup.html', {'error': 'Sorry, this username is already taken!!!'})
+
 	return render(request, 'signup.html')
 
 
@@ -83,7 +88,10 @@ def dashboard(request):
 	if not request.user.is_active:
 		return redirect(reverse_lazy('login_page'))
 	
-	user_detail = UserProfile.objects.get(user=request.user)
+	try:
+		user_detail = UserProfile.objects.get(user=request.user)
+	except:
+		return redirect(reverse_lazy('profile'))
 	queryset = Question.objects.all()
 
 	context = { 

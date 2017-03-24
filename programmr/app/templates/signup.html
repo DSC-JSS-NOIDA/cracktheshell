@@ -20,6 +20,13 @@
 			      	<button type="submit">Signup</button>
 			    </form>
 		  	</div>
+		  	{% if error %}
+		  		<span id="error">
+		  			<center>
+		  				{{ error }}
+		  			</center>
+		  		</span>
+		  	{% endif %}
 		</div>
 	    
   	</body>
