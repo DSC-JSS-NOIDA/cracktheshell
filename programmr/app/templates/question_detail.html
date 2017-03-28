@@ -53,10 +53,10 @@
                 <div id="editor_lang">
                 <select class="language" id="editor_select" name="editor_lang">
                     <option value="">Select</option>
-                    <option value="c_cpp">C</option>
-                    <option value="c_cpp">C++</option>
-                    <option value="java">Java</option>
-                    <option value="python">Python</option>
+                    <option value="c_cpp">Clojure</option>
+                    <option value="c_cpp">Haskell</option>
+                    <option value="java">Perl</option>
+                    <option value="python">C#</option>
                 </select>
                 <input type="hidden" name="source" class="source" value="" />
                 <textarea type="text" id="editor" /></textarea>
@@ -65,16 +65,16 @@
                 <span id="or_tag">OR Upload your source file here:</span>
                 <br>
                 {{form}}
-                <br>
+                <!-- <br>
                 <span id="or_tag">Language:</span>
                 <br>
                 <select class="language" id="select" name="lang" required>
                     <option value="">Select</option>
-                    <option value="C">C</option>
-                    <option value="CPP">C++</option>
-                    <option value="JAVA">Java</option>
-                    <option value="PYTHON">Python</option>
-                </select>
+                    <option value=CLOJURE>Clojure</option>
+                    <option value="HASKELL">Haskell</option>
+                    <option value="CSHARP">C#</option>
+                    <option value="PERL">Perl</option>
+                </select> -->
                 <input type="hidden" name="id" value="{{ question.id }}" />
                 <br><br>
                 <input type='submit' class='btn btn-primary btn-lg submit-btn' value='Submit' placeholder="Submit" />

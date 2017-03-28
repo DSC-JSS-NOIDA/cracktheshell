@@ -29,6 +29,7 @@ class Question(models.Model):
 	total_submissions=models.IntegerField(default=0)
 	correct_submissions=models.IntegerField(default=0)
 	accuracy=models.DecimalField(max_digits=5, decimal_places=2, default=0)
+	lang = models.CharField(max_length=10, blank=True, null=True)
 	
 
 	def __unicode__(self):

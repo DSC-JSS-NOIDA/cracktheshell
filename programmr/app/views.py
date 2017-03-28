@@ -1,5 +1,5 @@
 from __future__ import division
-import requests
+import requests, filecmp
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from models import *
@@ -130,17 +130,18 @@ def submission(request,id=None):
 
 	elif request.method == 'POST':
 		
-		user_id = user_detail.email_ID
+		user_id = user_detail.user.username
 
 		id = request.POST['id']
 		instance = get_object_or_404(Question, id=id)
 
 		# constants
 		RUN_URL = u'https://api.hackerearth.com/v3/code/run/'
-		CLIENT_SECRET = 'b00a3022083cfb5ba5fc2377d0d126e612c35d82'
+		CLIENT_SECRET = '019bec021c83c2fe95355bc5632ce9de1b574d01'
 		
-		lang = request.POST['lang']
-		f = Question.objects.all().get(id=id).testcase_input
+		ques = Question.objects.all().get(id=id)
+		lang = ques.lang
+		f = ques.testcase_input
 		f.open(mode='rb') 
 		lines_input = f.read()
 		f.close()
@@ -195,7 +196,9 @@ def submission(request,id=None):
 			result = "RE"
 		elif(status == "AC"):
 			output = response['run_status']['output']
-			if output == (lines_output+'\n'):
+			same = set(output).intersection(lines_output)
+			same.discard('\n')
+			if same:
 				result = "CA"
 				if instance.submission_set.filter(user_ID=user_id, status=result).count() == 0:
 					user_detail.total_score += 100
