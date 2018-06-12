@@ -137,7 +137,7 @@ def submission(request,id=None):
 
 		# constants
 		RUN_URL = u'https://api.hackerearth.com/v3/code/run/'
-		CLIENT_SECRET = '019bec021c83c2fe95355bc5632ce9de1b574d01'
+		CLIENT_SECRET = '**********************'
 		
 		ques = Question.objects.all().get(id=id)
 		lang = ques.lang
